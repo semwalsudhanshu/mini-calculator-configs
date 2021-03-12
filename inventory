@@ -1,2 +1,2 @@
 [sudserver]
-35.236.216.100 ansible_user=root 
+35.236.216.100 ansible_user=root ansible_pass={{ docker_pass }} 
