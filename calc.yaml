@@ -14,5 +14,5 @@
     
     - name: Deploy ELK stack using Docker
       shell:  
-        cmd: docker-compose up
+        cmd: docker-compose up -d
         chdir: /var/lib/jenkins/workspace/calculator/docker-elk/
