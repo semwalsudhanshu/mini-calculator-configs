@@ -13,6 +13,6 @@
       shell: docker run -dit -p {{ host_port }}:{{ container_port }} {{ docker_user }}/{{ docker_repo_name }}:{{ docker_image_tag }}
     
     - name: Deploy ELK stack using docker
-      shell: 
+      shell:  
         cmd: docker-compose up
-        chdir: "{{ playbook_dir }}/docker-elk/"
+        chdir: /var/lib/jenkins/workspace/calculator/docker-elk/
