@@ -1,0 +1,4 @@
+host_port: 3002
+container_port: 3000
+docker_repo_name: mini-calc
+docker_image_tag: latest 

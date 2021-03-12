@@ -1,0 +1,18 @@
+---
+
+- name: Get all the configuration
+  hosts: sudserver
+  vars_files:
+    - project/{{ project }}/app_config.yaml
+    - project/{{ project }}/secret.yaml
+  tasks:
+    - name: Start docker service
+      shell: service docker start
+       
+    - name: Deploy Calculator Application
+      shell: docker run -dit -p {{ host_port }}:{{ container_port }} {{ docker_user }}/{{ docker_repo_name }}:{{ docker_image_tag }}
+    
+    - name: Deploy ELK stack using docker
+      shell: 
+        cmd: docker-compose up
+        chdir: "{{ playbook_dir }}/docker-elk/"
