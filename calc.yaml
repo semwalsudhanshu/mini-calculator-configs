@@ -12,7 +12,7 @@
     - name: Deploy Calculator Application
       shell: docker run -dit -p {{ host_port }}:{{ container_port }} {{ docker_user }}/{{ docker_repo_name }}:{{ docker_image_tag }}
     
-    - name: Deploy ELK stack using docker
+    - name: Deploy ELK stack using Docker
       shell:  
         cmd: docker-compose up
         chdir: /var/lib/jenkins/workspace/calculator/docker-elk/
